@@ -8,8 +8,8 @@ body, html {
 
 .dashboard {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    padding: 0px 220px;
+    grid-template-columns: auto 1fr;
+    padding: 0px 200px;
     min-height: 100vh;
     background-color: black;
 }
@@ -22,6 +22,7 @@ body, html {
 .dashleft {
     background-color: rgb(20, 158, 218);
     padding: 24px;
+    padding-right: 50px;
 }
 
 .sidebar {
