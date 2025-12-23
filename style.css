@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    padding: 0px 220px;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.dashboard div {
+    font-size: 18px;
+    font-family: Helvetica;
+}
+
+.dashleft {
+    background-color: rgb(20, 158, 218);
+    padding: 24px;
+}
+
+.sidebar {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-column: 1 / 2;
+    color: white;
+    gap: 30px;
+}
+
+.sbr-1 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px;
+}
+
+.gridicon {
+    display: flex;
+    gap: 4px;
+}
+
+.gridicon .col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.gridicon .big {
+    width: 15px;
+    height: 17px;
+    background: white;
+}
+
+.gridicon .small {
+    width: 15px;
+    height: 12px;
+    background: white;
+}
+
+.sbr-2,
+.sbr-3 {
+    padding-left: 0; /* alinhamento real começa aqui */
+}
+
+#menu-um,
+#menu-dois {
+    display: grid;
+    padding-left: 0;
+    margin-top: 24px;
+}
+
+#menu-um li,
+#menu-dois li {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+#menu-um svg,
+#menu-dois svg {
+    fill: white;
+}
+
+.dashright {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.header {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    grid-row: 1 / 2;
+    background-color: white;
+    color: black;
+    padding: 10px 40px;
+    gap:20px;
+    grid-template-areas:
+    "search user"
+    "welcome actions";
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -12px;
+    height: 12px;
+    background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+    );
+    pointer-events: none;
+}
+
+
+.firstcol {
+    display: grid;
+    grid-area: search;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px;
+}
+
+.search-input {
+    width: 90%;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgb(221, 228, 239);
+    font-size: 16px;
+    background-color:rgb(221, 228, 239);
+}
+
+.secondcol {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    grid-area: user;
+}
+
+.firstrow {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 16px;
+    grid-area: welcome;
+}
+
+.avatar {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.username h1,
+.username h2 {
+    margin: 2px;
+}
+
+.hithere {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.secondrow {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    gap: 16px;
+    grid-area: actions;
+}
+
+button {
+    border-radius: 24px;
+    border: 1px solid rgb(20, 158, 218);
+    background-color: rgb(20, 158, 218);
+    color: white;
+    font-weight: 500;
+    margin-right: 20px;
+    padding: 10px 30px;
+    font-size: 16px;
+}
+
+
+.main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-auto-rows: min-content;
+    grid-auto-flow: row;
+    background-color: rgb(221, 228, 239);
+    padding: 20px;
+    gap: 20px;
+    grid-template-areas:
+    "projects announcements"
+    "cards aboard"
+    "cards trending"
+    "cards tboard";
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap:20px;
+    grid-area: cards;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: auto auto;
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    border-left: 8px solid rgba(255, 166, 0, 0.792);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  height: 12px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  pointer-events: none;
+}
+
+.cardtext {
+    text-align: left;
+}
+
+.cardicons {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 25px;
+    justify-self: end;
+    align-self: end;
+    padding: 25px 30px;
+}
+
+.announcements {
+    grid-area: announcements;
+}
+
+.board.a {
+    grid-area: aboard;
+    padding: 10px 20px;
+}
+
+.ann {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.board.a hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 16px 0;
+}
+
+.trending {
+    grid-area: trending;
+}
+
+.board.t {
+    grid-area: tboard;
+    display: grid;
+    grid-template-areas: 
+    "user1avatar user1text"
+    "user2avatar user2text"
+    "user3avatar user3text"
+    "user4avatar user4text";
+    padding: 20px;
+    gap: 20px;
+}
+
+.board.t p {
+    margin: 0;
+}
+
+.trending-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+}
+
+
+.user1 {
+    grid-area: user1;
+}
+
+.user2 {
+    grid-area: user2;
+}
+
+.user3 {
+    grid-area: user3;
+}
+
+.user4 {
+    grid-area: user4;
+}
+
+.board {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.board::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  height: 12px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  pointer-events: none;
+}
+
+.projects h2,
+.announcements h2,
+.trending h2 {
+  margin-bottom: -2px;
+}
+
+p {
+    font-size: 16px;
+    text-align: left;
+    padding-left: 16px;
+    color: rgb(111, 108, 108);
+}
+
+h1 {
+    font-size: 24px;
+}
+
+ul {
+    list-style-type: none;
+
+}
+
+li {
+    font-size: 22px;
+    padding-bottom: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 16px;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 16px;
+}
