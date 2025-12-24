@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 
 body, html {
     margin: 0;
@@ -10,7 +10,6 @@ body, html {
     display: grid;
     grid-template-columns: auto 1fr;
     padding: 0px 200px;
-    min-height: 100vh;
     background-color: black;
 }
 
@@ -20,9 +19,9 @@ body, html {
 }
 
 .dashleft {
-    background-color: rgb(20, 158, 218);
+    background-color: rgb(8, 148, 218);
     padding: 24px;
-    padding-right: 50px;
+    padding-right: 60px;    
 }
 
 .sidebar {
@@ -30,7 +29,7 @@ body, html {
     grid-template-rows: auto 1fr auto;
     grid-column: 1 / 2;
     color: white;
-    gap: 30px;
+    gap: 10px;
 }
 
 .sbr-1 {
@@ -52,27 +51,22 @@ body, html {
 }
 
 .gridicon .big {
-    width: 15px;
-    height: 17px;
+    width: 13px;
+    height: 15px;
     background: white;
 }
 
 .gridicon .small {
-    width: 15px;
-    height: 12px;
+    width: 13px;
+    height: 10px;
     background: white;
-}
-
-.sbr-2,
-.sbr-3 {
-    padding-left: 0; /* alinhamento real começa aqui */
 }
 
 #menu-um,
 #menu-dois {
     display: grid;
     padding-left: 0;
-    margin-top: 24px;
+    margin-top: 20px;
 }
 
 #menu-um li,
@@ -81,22 +75,26 @@ body, html {
     grid-template-columns: 24px 1fr;
     align-items: center;
     gap: 20px;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 #menu-um svg,
 #menu-dois svg {
     fill: white;
+    width: 20px;
 }
 
 .dashright {
     display: grid;
     grid-template-rows: auto 1fr;
+    min-height: 100vh
 }
 
 .header {
     position: relative;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: auto auto;
     grid-row: 1 / 2;
     background-color: white;
@@ -133,9 +131,8 @@ body, html {
 }
 
 .search-input {
-    width: 90%;
-    padding: 8px 12px;
-    border-radius: 999px;
+    width: 100%;
+    border-radius: 100px;
     border: 1px solid rgb(221, 228, 239);
     font-size: 16px;
     background-color:rgb(221, 228, 239);
@@ -145,7 +142,7 @@ body, html {
     display: grid;
     grid-template-columns: auto auto auto;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     gap: 24px;
     grid-area: user;
 }
@@ -169,7 +166,7 @@ body, html {
 }
 
 .hithere {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -184,23 +181,23 @@ body, html {
 
 button {
     border-radius: 24px;
-    border: 1px solid rgb(20, 158, 218);
-    background-color: rgb(20, 158, 218);
+    border: 1px solid rgb(8, 148, 218);
+    background-color: rgb(8, 148, 218);
     color: white;
-    font-weight: 500;
-    margin-right: 20px;
-    padding: 10px 30px;
-    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 25px;
+    font-size: 12px;
 }
 
 
 .main {
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: auto 1fr auto 1fr;
+    grid-template-columns: 2fr 220px;
     background-color: rgb(221, 228, 239);
     padding: 20px;
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 10px;
+    align-content: start; 
     grid-template-areas:
     "projects announcements"
     "cards aboard"
@@ -214,17 +211,23 @@ button {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap:20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     grid-area: cards;
+    align-content: start;
 }
 
 .card {
-    display: grid;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 120px;
     background-color: white;
     border-radius: 8px;
-    border-left: 8px solid rgba(255, 166, 0, 0.792);
+    border-left: 6px solid rgba(255, 166, 0, 0.792);
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
 .card::after {
@@ -244,16 +247,37 @@ button {
 
 .cardtext {
     text-align: left;
+    flex: 0 0 auto;
 }
 
+.cardtext p {
+  display: -webkit-box;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
 
 .cardicons {
-    display: grid;
-    grid-auto-flow: column;
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+    display: flex;
+    justify-content: flex-end;
     gap: 25px;
-    justify-self: end;
-    align-self: end;
-    padding: 25px 25px 30px 0px;
+}
+
+.cardicons img {
+    width: 20px;
+}
+
+.cardtext h3 {
+    margin: 0 0 4px;
+}
+
+.cardtext p {
+    margin: 0;
 }
 
 .announcements {
@@ -262,7 +286,17 @@ button {
 
 .board.a {
     grid-area: aboard;
-    padding: 10px 20px;
+    padding: 20px;
+}
+
+.board.a p {
+    font-size: 10px;
+    margin: 0;
+}
+
+.board.a h4 {
+    margin: 0 0 4px;
+    font-size: 11px;
 }
 
 .ann {
@@ -289,20 +323,18 @@ button {
     "user2avatar user2text"
     "user3avatar user3text"
     "user4avatar user4text";
-    padding: 20px;
-    gap: 20px;
+    padding: 20px 30px 20px 20px;
+    row-gap: 10px;
 }
 
 .board.t p {
     margin: 0;
 }
 
-.trending-item {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  align-items: center;
+.board.t img {
+    width: 35px;
+    height: 35px;
 }
-
 
 .user1 {
     grid-area: user1;
@@ -348,14 +380,14 @@ button {
 }
 
 p {
-    font-size: 16px;
+    font-size: 12px;
     text-align: left;
     padding-left: 16px;
     color: rgb(111, 108, 108);
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 18px;
 }
 
 ul {
@@ -369,18 +401,18 @@ li {
 }
 
 h2 {
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
     padding-left: 16px;
 }
 
 h4 {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     padding-left: 16px;
 }
