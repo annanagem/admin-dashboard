@@ -4,6 +4,8 @@ body, html {
     margin: 0;
     padding: 0;
     background-color: black;
+    font-size: 18px;
+    font-family: 'Roboto', system-ui, sans-serif;
 }
 
 .dashboard {
@@ -13,10 +15,21 @@ body, html {
     background-color: black;
 }
 
-.dashboard div {
-    font-size: 18px;
-    font-family: Helvetica;
+.shadow-fade::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  height: 12px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  pointer-events: none;
 }
+
 
 .dashleft {
     background-color: rgb(8, 148, 218);
@@ -62,15 +75,13 @@ body, html {
     background: white;
 }
 
-#menu-um,
-#menu-dois {
+.menu {
     display: grid;
     padding-left: 0;
     margin-top: 20px;
 }
 
-#menu-um li,
-#menu-dois li {
+.menu li {
     display: grid;
     grid-template-columns: 24px 1fr;
     align-items: center;
@@ -79,8 +90,7 @@ body, html {
     font-weight: 500;
 }
 
-#menu-um svg,
-#menu-dois svg {
+.menu svg {
     fill: white;
     width: 20px;
 }
@@ -106,21 +116,10 @@ body, html {
     "welcome actions";
 }
 
-.header::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -12px;
-    height: 12px;
-    background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0)
-    );
-    pointer-events: none;
+.avatar {
+    border-radius: 50%;
+    object-fit: cover;
 }
-
 
 .firstcol {
     display: grid;
@@ -147,6 +146,11 @@ body, html {
     grid-area: user;
 }
 
+.avatar--header {
+    width: 35px;
+    height: 35px;
+}
+
 .firstrow {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -155,9 +159,9 @@ body, html {
     grid-area: welcome;
 }
 
-.avatar {
-    border-radius: 50%;
-    object-fit: cover;
+.avatar--main {
+    width: 60px;
+    height: 60px;
 }
 
 .username h1,
@@ -221,28 +225,14 @@ button {
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 120px;
+    min-height: 120px;
     background-color: white;
     border-radius: 8px;
     border-left: 6px solid rgba(255, 166, 0, 0.792);
     padding-right: 20px;
     padding-top: 30px;
     padding-bottom: 20px;
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -12px;
-  height: 12px;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0)
-  );
-  pointer-events: none;
+    padding-left: 16px;
 }
 
 .cardtext {
@@ -256,7 +246,6 @@ button {
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin: 0;
 }
 
 .cardicons {
@@ -291,7 +280,6 @@ button {
 
 .board.a p {
     font-size: 10px;
-    margin: 0;
 }
 
 .board.a h4 {
@@ -327,50 +315,16 @@ button {
     row-gap: 10px;
 }
 
-.board.t p {
-    margin: 0;
-}
-
-.board.t img {
+.avatar--t {
     width: 35px;
     height: 35px;
-}
-
-.user1 {
-    grid-area: user1;
-}
-
-.user2 {
-    grid-area: user2;
-}
-
-.user3 {
-    grid-area: user3;
-}
-
-.user4 {
-    grid-area: user4;
+    flex-shrink: 0; /* importante em grid/flex */
 }
 
 .board {
     position: relative;
     background-color: white;
     border-radius: 8px;
-}
-
-.board::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -12px;
-  height: 12px;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0)
-  );
-  pointer-events: none;
 }
 
 .projects h2,
@@ -382,7 +336,7 @@ button {
 p {
     font-size: 12px;
     text-align: left;
-    padding-left: 16px;
+    margin: 0;
     color: rgb(111, 108, 108);
 }
 
@@ -408,11 +362,9 @@ h2 {
 h3 {
     font-size: 14px;
     font-weight: 600;
-    padding-left: 16px;
 }
 
 h4 {
     font-size: 12px;
     font-weight: 600;
-    padding-left: 16px;
 }
